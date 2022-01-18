@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  web:
+    image: lapaville/tomcat:latest
+
+    volumes:
+      - ./tools/project/logs:/var/log/
+      - ./ssl:/usr/local/tomcat/ssl
+      - ./server.xml:/usr/local/tomcat/conf/server.xml
+
+    ports:
+        - "8080:8080"
+        - "8443:8443"
+    
